@@ -104,17 +104,23 @@ const createProduct = ( req,res) => {
  
          // get index
          const index = product.findIndex(data => data.id == id);
-       
+
+          //product multiple image
+              let pdImg = [];
+            req.files.forEach((pd) => {
+                pdImg.push(pd?.filename);
+            });
+           
          // validation
          if(product.some(data => data.id == id)){
              
             product[index]= {
                 ...product[index],
                 ...req.body,
-                photo : req.file ? req.file.filename : product[index]?.photo
-
-            }
+                photo : req.files ? pdImg : product[index]?.photo
             
+            }
+           
             // updata data
             updateProductDB(product)
              res.status(200).json({

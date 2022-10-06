@@ -24,7 +24,7 @@ const multurCustomerStorage = () => {
     const customerMulter = multer({
         storage : customerStorage
 
-    }).single('photo');
+    }).single('customer_photo');
 
     return customerMulter;
 }
@@ -80,7 +80,7 @@ const multurCatagoryStorage = () => {
     const catagoryMulter = multer({
         storage : catagoryStorage
 
-    }).single('photo');
+    }).single('catagory_photo');
 
     return catagoryMulter;
 }

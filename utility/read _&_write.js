@@ -57,6 +57,12 @@ const updateProductDB = (obj) => {
   return  writeFileSync(path.join(__dirname, "../db/product.json"),JSON.stringify(obj));
 };
 
+
+
+
+// 
+
+
 // export
 
 module.exports = {
